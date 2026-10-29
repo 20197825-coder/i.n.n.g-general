@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Visitas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f4f4f9;
+        }
+         .counter-box {
+            display: inline-block;
+            padding: 20px 30px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        #visitas{
+            font-size: 2rem;
+            color: #007BFF;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="counter-box">
+        <h2>Visitas totales</h2>
+        <div id="visitas">Cargador...</div>    
+    </div>
+    
+    <script>
+        //Usamos CountAPI para incrementar y obtener el numero de visitas.
+        //NOTA: Reemplaza "tu-namespace-unico" y "tu-nombre-de-pagina" por nombres propios
+        //para que el contador sea exclusivo de tu sitio web.
+        const namespace = "mi-sitio-web-ejemplo";
+        const key = "`pagina-principal";
+        
+
+        fetch()
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById(`visitas`).innerText = data.value;
+            })
+            .catch(error => {
+                console.error("Error al obtener el contador",error);
+                document.getElementById(`visitas`).innerText = "No disponible";
+            })
+            
+    </script>
+
+</body>
+</html>
